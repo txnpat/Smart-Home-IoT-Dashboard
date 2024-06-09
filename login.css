@@ -1,0 +1,1628 @@
+@import url('https://css.gg/css?=|music-speaker|printer|search|smart-home-cooker|smart-home-refrigerator|smart-home-wash-machine');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+:root {
+    --clr: #14161e;
+}
+
+body {
+    background-image: url(smarthome.jpg);
+}
+
+.sidebar {
+    position: absolute;
+    width: 80px;
+    height: 100%;
+    background: #ffffff3a;
+    transition: 0.5s;
+    padding-left: 10px;
+    overflow: hidden;
+}
+
+.sidebar.active {
+    width: 300px;
+}
+
+.sidebar ul {
+    position: relative;
+    height: 100%;
+}
+
+.sidebar ul li {
+    position: relative;
+    list-style: none;
+}
+
+.sidebar ul li.active {
+    background: var(--bg);
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+
+.sidebar ul li.logo {
+    margin-bottom: 50px;
+}
+
+.sidebar ul li.logo .icon .anh {
+    position: relative;
+    display: flex;
+    width: 35px;
+}
+
+.sidebar ul li.logo .text {
+    font-size: 1.2em;
+    font-weight: 500;
+    color: var(--clr);
+}
+
+.sidebar ul li a {
+    position: relative;
+    display: flex;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.sidebar ul li a .icon {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 60px;
+    padding-left: 9px;
+    height: 70px;
+    font-size: 1.5em;
+    color: #333;
+    transition: 0.5s;
+}
+
+.sidebar ul li a .text {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 70px;
+    font-size: 1em;
+    color: #333;
+    transition: 0.5s;
+    padding-left: 15px;
+    text-transform: uppercase;
+    line-height: 0.05em;
+}
+
+.sidebar ul li.active a .icon {
+    color: #fff;
+    opacity: 100%;
+}
+
+.sidebar ul li.active a .text {
+    color: #fff;
+    opacity: 100%;
+}
+
+.sidebar ul li:hover a .icon,
+.sidebar ul li:hover a .text {
+    color: var(--bg);
+}
+
+.sidebar ul li.active a .icon::before {
+    content: '';
+    position: absolute;
+    inset: 5px;
+    width: 60px;
+    background: var(--bg);
+    border-radius: 50%;
+    transition: 0.5s;
+}
+
+.sidebar ul li:hover.active a .icon::before {
+    background: #fff;
+}
+
+.bottom {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.menuToggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: fixed;
+    z-index: 1000;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menuToggle::before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background: #fff;
+    transform: translateY(-9px);
+    transition: 0.5s;
+    box-shadow: 0 9px 0 #fff;
+}
+
+.menuToggle::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background: #fff;
+    transform: translateY(9px);
+    transition: 0.5s;
+}
+
+.menuToggle.active::before {
+    transform: translateY(0px) rotate(45deg);
+    box-shadow: 0 0 0 #fff;
+}
+
+.menuToggle.active::after {
+    transform: translateY(0px) rotate(-45deg);
+}
+
+.datetime {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90px;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.5s;
+    text-transform: uppercase;
+}
+
+.time span:nth-child(2) {
+    margin-right: 10px;
+    font-size: 15px;
+}
+
+.home {
+    position: absolute;
+    left: 80px;
+    width: 100%;
+    height: 100%;
+    background-color: #ececec6a;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.house {
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    color: #251000ef;
+    top: 90px;
+    left: 4%;
+    background-color: #ffffff3a;
+    border-radius: 30px;
+    box-shadow: 20px 20px 20px rgb(0, 0, 0, 0.3);
+    min-width: 1260px;
+    height: 670px;
+    transition: transform 0.5s ease;
+}
+
+.house:hover {
+    transform: scale(0.98);
+}
+
+.house h2 {
+    text-transform: uppercase;
+    transform: translateY(1.3em) translateX(1.3em);
+    font-size: 36px;
+}
+
+.room-line-left {
+    position: absolute;
+    height: 120px;
+    transform: translateY(410px) translateX(50px);
+    background-color: #fff;
+    min-width: 3px;
+}
+
+.room-line-left::before {
+    content: '';
+    position: absolute;
+    height: 70px;
+    transform: translateY(-12.3em);
+    background-color: #fff;
+    min-width: 3px;
+}
+
+.room-line-top {
+    position: absolute;
+    width: 44.4em;
+    transform: translateY(-2.37em) translateX(31.1em);
+    background-color: #fff;
+    min-height: 3px;
+}
+
+.room-line-top::before {
+    content: '';
+    position: absolute;
+    width: 42em;
+    transform: translateY(15.5em) translateX(-27.98em);
+    background-color: #fff;
+    min-height: 3px;
+}
+
+.room-line-top::after {
+    content: '';
+    position: absolute;
+    width: 24em;
+    transform: translateY(15.5em) translateX(20.5em);
+    background-color: #fff;
+    min-height: 3px;
+}
+
+.room-line-bottom {
+    position: absolute;
+    width: 56.87em;
+    transform: translateY(33.1em) translateX(3.1em);
+    background-color: #fff;
+    min-height: 3px;
+}
+
+.room-line-bottom::before {
+    content: '';
+    position: absolute;
+    width: 15.8em;
+    transform: translateY(-12.53em) translateX(56.71em);
+    background-color: #fff;
+    min-height: 3px;
+}
+
+.room-line-right {
+    position: absolute;
+    height: 23.14em;
+    transform: translateY(-2.37em) translateX(75.5em);
+    background-color: #fff;
+    min-width: 3px;
+}
+
+.room-line-right::before {
+    content: '';
+    position: absolute;
+    height: 15.7em;
+    transform: translateY(0em) translateX(-44.4em);
+    background-color: #fff;
+    min-width: 3px;
+}
+
+.room-line-right::after {
+    content: '';
+    position: absolute;
+    height: 16em;
+    transform: translateY(19.5em) translateX(-15.7em);
+    background-color: #fff;
+    min-width: 3px;
+}
+
+.sofa {
+    position: absolute;
+    width: 16.25em;
+    transform: translateY(28.2em) translateX(6em);
+    background-color: #5e5e5e91;
+    min-height: 80px;
+    border-top-left-radius: 5px;
+}
+
+.sofa::before {
+    content: "";
+    width: 80px;
+    height: 150px;
+    background-color: #5e5e5e91;
+    position: absolute;
+    bottom: 0px;
+    left: 260px;
+    border-radius: 5px 5px 5px 0px;
+}
+
+.sofa-inside {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    background-color: #c7c7c774;
+    width: 110px;
+    height: 10px;
+    border-radius: 2px;
+}
+
+.sofa-inside::after {
+    content: "";
+    position: absolute;
+    left: 113px;
+    bottom: 0px;
+    background-color: #c7c7c774;
+    width: 104px;
+    height: 10px;
+    border-radius: 2px;
+}
+
+.sofa-beside {
+    position: absolute;
+    left: 230px;
+    bottom: 10px;
+    background-color: #c7c7c774;
+    width: 100px;
+    height: 10px;
+    border-radius: 2px;
+}
+
+.sofa-beside::before {
+    content: "";
+    position: absolute;
+    left: 90px;
+    bottom: 13px;
+    background-color: #c7c7c774;
+    width: 10px;
+    height: 104px;
+    border-radius: 2px;
+}
+
+.sofa-beside::after {
+    content: "";
+    position: absolute;
+    left: 40px;
+    bottom: 120px;
+    background-color: #c7c7c774;
+    width: 60px;
+    height: 10px;
+    border-radius: 2px;
+}
+
+.tv-table {
+    position: absolute;
+    width: 13.2em;
+    transform: translateY(15em) translateX(8em);
+    background-color: #5e5e5e91;
+    min-height: 40px;
+    border-radius: 5px;
+}
+
+.livingroom .tv-table .icon-tv-table {
+    position: absolute;
+    display: flex;
+    padding: 7px 30px;
+    font-size: 1.7em;
+    color: #251000ef;
+    transition: 0.5s;
+    gap: 37px;
+}
+
+.icon-tv-table .icon {
+    padding: 2px 130px;
+}
+
+.livingroom .icon {
+    position: absolute;
+    display: flex;
+    font-size: 1.5em;
+    color: #251000ef;
+    transition: 0.5s;
+}
+
+.light-livingroom {
+    transform: translateY(16em) translateX(10em);
+}
+
+.snow-livingroom {
+    transform: translateY(10em) translateX(20em);
+}
+
+.livingroom h4,
+.bedroom h4,
+.kitchen h4,
+.bathroom h4 {
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+}
+
+.livingroom h4 {
+    transform: translateY(185px) translateX(180px);
+}
+
+.bedroom h4 {
+    transform: rotate(270deg) translateY(440px) translateX(-80px);
+}
+
+.kitchen h4 {
+    transform: rotate(90deg) translateY(-945px) translateX(420px);
+}
+
+.bathroom h4 {
+    transform: translateY(340px) translateX(1045px);
+}
+
+.bedroom .bed {
+    position: absolute;
+    justify-content: center;
+    width: 20em;
+    transform: translateY(-2.2em) translateX(55.5em);
+    background-color: #5e5e5e91;
+    min-height: 11em;
+    border-radius: 15px 0px 15px 15px;
+}
+
+.bedroom .bed::before {
+    content: "";
+    position: absolute;
+    justify-content: center;
+    transform: translateY(2em) translateX(15em);
+    background-color: #c7c7c774;
+    width: 3.5em;
+    height: 7em;
+    border-radius: 10px;
+}
+
+.bedroom .office {
+    position: absolute;
+    justify-content: center;
+    transform: translateY(-2.2em) translateX(31.2em);
+    background-color: #5e5e5e91;
+    width: 3.5em;
+    min-height: 10em;
+    border-bottom-right-radius: 5px;
+}
+
+.bedroom .office::before {
+    content: "";
+    position: absolute;
+    justify-content: center;
+    transform: translateX(3.5em);
+    background-color: #5e5e5e91;
+    width: 10em;
+    height: 3.5em;
+    border-bottom-right-radius: 5px;
+}
+
+.bedroom .office::after {
+    content: "";
+    position: absolute;
+    justify-content: center;
+    transform: translateY(4em) translateX(4em);
+    background-color: #5e5e5e91;
+    width: 4.5em;
+    height: 1.2em;
+    border-radius: 5px 5px 15px 15px;
+}
+
+.bedroom .icon {
+    position: absolute;
+    display: flex;
+    font-size: 1.5em;
+    color: #251000ef;
+    transition: 0.5s;
+}
+
+.snow-bedroom {
+    transform: translateY(-1em) translateX(32em);
+}
+
+.lamp-bedroom {
+    transform: translateY(7em) translateX(48em);
+}
+
+.light-bedroom {
+    transform: translateY(0.7em) translateX(0.7em);
+}
+
+.printer-bedroom {
+    transform: translateY(0.7em) translateX(7em);
+}
+
+.dinning-table {
+    position: absolute;
+    justify-content: center;
+    background-color: #5e5e5e91;
+    width: 8em;
+    transform: translateY(18em) translateX(35em);
+    min-height: 12em;
+    border-radius: 10px;
+}
+
+.dinning-table::before {
+    content: "";
+    position: absolute;
+    justify-content: center;
+    transform: translateY(3.5em) translateX(-2em);
+    background-color: #5e5e5e91;
+    width: 1.5em;
+    height: 5em;
+    border-radius: 10px 3px 3px 10px;
+}
+
+.dinning-table::after {
+    content: "";
+    position: absolute;
+    justify-content: center;
+    transform: translateY(3.5em) translateX(8.5em);
+    background-color: #5e5e5e91;
+    width: 1.5em;
+    height: 5em;
+    border-radius: 3px 10px 10px 3px;
+}
+
+.kitchen-table {
+    position: absolute;
+    justify-content: center;
+    background-color: #5e5e5e91;
+    transform: translateY(20.6em) translateX(56em);
+    width: 4em;
+    min-height: 12.5em;
+}
+
+.kitchen-table::before {
+    content: "";
+    position: absolute;
+    justify-content: center;
+    background-color: #5e5e5e91;
+    transform: translateY(8.5em) translateX(-4em);
+    width: 4em;
+    min-height: 4em;
+}
+
+.icon-light-kitchen {
+    position: absolute;
+    display: flex;
+    font-size: 1.5em;
+    color: #251000ef;
+    transition: 0.5s;
+    transform: translateY(3.5em) translateX(2.2em);
+}
+
+.icon-kitchen-table {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    padding: 20px 18px;
+    font-size: 1.5em;
+    color: #251000ef;
+    transition: 0.5s;
+    gap: 45px;
+}
+
+.icon-kitchen-table .icon {
+    transform: translateX(3px);
+}
+
+.icon-kitchen-table .icon .gg-smart-home-refrigerator {
+    transform: translateY(-3.1em) translateX(-2.5em);
+}
+
+.icon-bathroom {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    padding: 20px 18px;
+    font-size: 1.5em;
+    color: #251000ef;
+    transition: 0.5s;
+    gap: 45px;
+}
+
+.icon-bathroom ion-icon {
+    transform: translateY(10em) translateX(42em);
+}
+
+.icon-bathroom .icon {
+    transform: translateY(8em) translateX(48em);
+}
+
+.light,
+.devices,
+.analytics,
+.profile {
+    position: absolute;
+    left: 80px;
+    width: 100%;
+    height: 100%;
+    background-color: #ececec6a;
+}
+
+.work .light,
+.work .devices,
+.work .analytics,
+.work .profile {
+    display: none;
+}
+
+.datetime,
+.home,
+.light,
+.devices,
+.analytics,
+.profile {
+    transition: left 0.5s ease;
+}
+
+.lightMenu {
+    gap: 40px;
+    display: flex;
+}
+
+.lightMenu .rooms {
+    position: relative;
+    text-transform: uppercase;
+    color: #251000ef;
+    left: 40px;
+    background-color: #ffffff3a;
+    border-radius: 30px;
+    box-shadow: 15px 15px 15px rgb(0, 0, 0, 0.2);
+    min-width: 400px;
+    height: 670px;
+    transition: transform 0.5s ease;
+}
+
+.lightMenu .rooms:hover {
+    transform: scale(0.98);
+}
+
+.lightMenu .rooms .office,
+.lightMenu .rooms .bed,
+.lightMenu .rooms .dining-table,
+.lightMenu .rooms .bep {
+    position: relative;
+    text-transform: uppercase;
+    color: #251000ef;
+    background-color: #ffffff3a;
+    border-radius: 15px;
+    box-shadow: 15px 15px 15px rgb(0, 0, 0, 0.2);
+    height: 260px;
+    width: 360px;
+    top: 90px;
+    left: 20px;
+}
+
+.lightMenu .rooms .bed,
+.lightMenu .rooms .bep {
+    top: 100px;
+}
+
+.lightMenu .rooms h2 {
+    position: absolute;
+    left: 40px;
+    top: 30px;
+    transition: 0.5s;
+}
+
+.lightMenu .rooms .rooms-img {
+    max-width: 100%;
+    height: auto;
+    position: absolute;
+}
+
+.lightMenu .rooms .office h3,
+.lightMenu .rooms .bep h3,
+.lightMenu .rooms .bed h3 {
+    text-align: right;
+    position: absolute;
+    right: 40px;
+    top: 30px;
+}
+
+.lightMenu .rooms .office .office-img {
+    max-width: 150%;
+    top: -20px;
+    left: -37%;
+    height: auto;
+    position: absolute;
+}
+
+.lightMenu .rooms .dining-table h3 {
+    transform: translateY(1.5em) translateX(7.4em);
+}
+
+.lightMenu .rooms .dining-table .dining-table-img,
+.lightMenu .rooms .bep .bep-img {
+    max-width: 60%;
+    height: auto;
+    top: 0px;
+    position: absolute;
+}
+
+.lightMenu .rooms .bed .bed-img {
+    max-width: 60%;
+    height: auto;
+    top: 30px;
+    position: absolute;
+}
+
+form {
+    margin-top: 500px;
+    margin-left: 100px;
+    width: 200px;
+    padding: 1.4em 2.2em;
+    border-radius: 4px;
+    background: #ffffff3a;
+    box-shadow: 0px 5px 15px rgb(0, 0, 0, 0.2);
+}
+
+.blub {
+    position: absolute;
+    width: 120px;
+    height: 200px;
+    top: 270px;
+    left: 150px;
+    border-radius: 5% 3% 38% 40%;
+    background: #fae8bad8;
+    -webkit-filter: blur(15px);
+    filter: blur(40px);
+    z-index: 2;
+    opacity: 0;
+    transition: all 300ms;
+}
+
+.blub-kitchen {
+    position: absolute;
+    width: 120px;
+    height: 100px;
+    top: 150px;
+    right: 180px;
+    border-radius: 5% 3% 38% 40%;
+    background: #fae8bad8;
+    -webkit-filter: blur(15px);
+    filter: blur(40px);
+    z-index: 2;
+    opacity: 0;
+    transition: all 300ms;
+}
+
+.wall-light-shadow,
+.wall-light-shadow-kitchen {
+    background: linear-gradient(rgb(255, 209, 140), #fffbfb93 80%);
+    position: absolute;
+    border-radius: 50% 50% 30px 30px;
+    -webkit-filter: blur(5px);
+    filter: blur(30px);
+    z-index: -1;
+    opacity: 0;
+    transition: all 300ms;
+}
+
+.wall-light-shadow-kitchen {
+    width: 20%;
+    height: 20vh;
+    top: 150px;
+    left: 70px;
+}
+
+.wall-light-shadow {
+    width: 50%;
+    height: 53vh;
+    top: 250px;
+    left: 100px;
+}
+
+#brightnessDisplay {
+    position: absolute;
+    text-transform: uppercase;
+    color: #251000ef;
+    font-weight: bold;
+    font-size: 56px;
+    top: 62%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#brightnessDisplay-kitchen {
+    position: absolute;
+    text-transform: uppercase;
+    color: #251000ef;
+    font-weight: bold;
+    font-size: 40px;
+    top: 60%;
+    right: 10%;
+    transform: translate(0%, -100%);
+}
+
+#livingroom-form input[type=range],
+#dining-table-light input[type=range] {
+    appearance: none;
+    width: 100%;
+    float: right;
+}
+
+#livingroom-form input[type=range]:focus,
+#dining-table-light input[type=range]:focus {
+    outline: none;
+}
+
+#livingroom-form input[type=range]::-webkit-slider-runnable-track,
+#dining-table-light input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 2px;
+    cursor: pointer;
+    background: #fff;
+}
+
+#livingroom-form input[type=range]::-webkit-slider-thumb,
+#dining-table-light input[type=range]::-webkit-slider-thumb {
+    height: 13px;
+    width: 13px;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+    appearance: none;
+    margin-top: -6px;
+}
+
+#livingroom-form input[type=range]:hover::-webkit-slider-thumb,
+#dining-table-light input[type=range]:hover::-webkit-slider-thumb {
+    box-shadow: 0 0 50px #fff;
+}
+
+#livingroom-form input[type=range]::-moz-range-track,
+#dining-table-light input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 2px;
+    cursor: pointer;
+    background: #fff;
+}
+
+#livingroom-form input[type=range]::-ms-track,
+#dining-table-light input[type=range]::-ms-track {
+    width: 100%;
+    height: 2px;
+    cursor: pointer;
+    background: #fff;
+}
+
+#livingroom-form input[type=range]::-ms-thumb,
+#dining-table-light input[type=range]::-ms-thumb {
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    cursor: pointer;
+    background: #fff;
+    appearance: none;
+    margin-top: -6px;
+}
+
+body[livingroom-light^='1'],
+body[kitchen-light^='1'] {
+    .blub,
+    .wall-light-shadow,
+    .wall-light-shadow-kitchen {
+        opacity: 0;
+    }
+    .light .lightMenu .rooms .rooms-img {
+        opacity: 0.9;
+    }
+}
+
+#dining-table-light {
+    width: 50%;
+    transform: translateY(-29em) translateX(2.8em);
+}
+
+.check-bed,
+.check-office,
+.check-bep {
+    margin-right: -180px;
+    padding: 70px;
+    transform: translate(25%, 0%);
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 10%;
+}
+
+label {
+    position: relative;
+    width: 100px;
+    height: 55px;
+    background: #7d7d7d48;
+    border-radius: 14px;
+}
+
+label input {
+    appearance: none;
+}
+
+label span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 55px;
+    height: 55px;
+    background: #ffffff71;
+    box-shadow: 0px 2px 20px rgb(0, 0, 0, 0.3);
+    border-radius: 14px;
+    cursor: pointer;
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+label input:checked~span {
+    left: 45px;
+}
+
+label span ion-icon {
+    color: #251000ef;
+    font-size: 2em;
+    transition: 0.5s;
+}
+
+label input:checked~span ion-icon {
+    color: #fff;
+    filter: drop-shadow(0 0 2px #ffffff90) drop-shadow(0 0 4px #ffffff90) drop-shadow(0 0 6px #ffffff90);
+}
+
+.bulb-bed {
+    background: linear-gradient(rgb(255, 200, 118), #fffbfbc5 100%);
+    width: 100%;
+    height: 20vh;
+    position: absolute;
+    top: 40px;
+    right: 150px;
+    border-radius: 50% 50% 0 0;
+    -webkit-filter: blur(5px);
+    filter: blur(40px);
+    z-index: -1;
+    opacity: 0;
+    transition: all 100ms;
+}
+
+.bulb-office {
+    background: linear-gradient(rgb(255, 200, 118), #fffbfbc5 100%);
+    width: 100%;
+    height: 20vh;
+    position: absolute;
+    transform: translateY(-3em) translateX(-8em);
+    border-radius: 50% 50% 0 0;
+    -webkit-filter: blur(5px);
+    filter: blur(40px);
+    z-index: -1;
+    opacity: 0;
+    transition: all 100ms;
+}
+
+.bulb-bep {
+    background: linear-gradient(rgb(255, 200, 118), #fffbfbc5 100%);
+    width: 100%;
+    height: 20vh;
+    position: absolute;
+    top: 30px;
+    right: 150px;
+    border-radius: 50% 50% 0 0;
+    -webkit-filter: blur(5px);
+    filter: blur(40px);
+    z-index: -1;
+    opacity: 0;
+    transition: all 100ms;
+}
+
+label input:checked~.bulb-bed,
+label input:checked~.bulb-office,
+label input:checked~.bulb-bep {
+    opacity: 0.9;
+}
+
+.devices .livingroom,
+.devices .bedroom,
+.devices .kitchen,
+.devices .bathroom {
+    border-radius: 20px;
+    background-color: #ffffff3a;
+    width: 27em;
+    height: 18.5em;
+    box-shadow: 0px 2px 20px rgb(0, 0, 0, 0.3);
+}
+
+.devices .livingroom {
+    transform: translateX(3.5em);
+    transition: transform 0.5s ease;
+}
+
+.devices .bedroom {
+    transform: translateX(3.5em) translateY(3.5em);
+    transition: transform 0.5s ease;
+}
+
+.devices .kitchen {
+    transform: translateX(32em) translateY(-37em);
+    transition: transform 0.5s ease;
+}
+
+.devices .bathroom {
+    transform: translateX(32em) translateY(-33.5em);
+    transition: transform 0.5s ease;
+}
+
+.devices .livingroom:hover {
+    transform: translateX(3.5em) scale(0.98);
+}
+
+.devices .bedroom:hover {
+    transform: translateX(3.5em) translateY(3.5em) scale(0.98);
+}
+
+.devices .kitchen:hover {
+    transform: translateX(32em) translateY(-37em) scale(0.98);
+}
+
+.devices .bathroom:hover {
+    transform: translateX(32em) translateY(-33.5em) scale(0.98);
+}
+
+.info {
+    border-radius: 20px;
+    background-color: #ffffff3a;
+    width: 20.5em;
+    height: 40.5em;
+    box-shadow: 0px 2px 20px rgb(0, 0, 0, 0.3);
+    transform: translateX(60.5em) translateY(-74em);
+    transition: transform 0.5s ease;
+}
+
+.info:hover {
+    transform: translateX(60.5em) translateY(-74em) scale(0.98);
+}
+
+.devices .livingroom h2,
+.devices .bedroom h2,
+.devices .kitchen h2,
+.devices .bathroom h2,
+.devices .info h2 {
+    position: absolute;
+    left: 40px;
+    top: 30px;
+    transition: 0.5s;
+    text-transform: uppercase;
+}
+
+.devices-light-livingroom,
+.devices-tv,
+.devices-game,
+.devices-speaker,
+.devices-cold-livingroom,
+.devices-lamp,
+.devices-light-office,
+.devices-cold-bedroom,
+.devices-printer,
+.devices-light-kitchen,
+.devices-fire1,
+.devices-coffee,
+.devices-microwave,
+.devices-cooker,
+.devices-refrigerator,
+.devices-light-bathroom,
+.devices-washmachine {
+    border-radius: 5px;
+    background-color: #ffffff3a;
+    box-shadow: 0px 2px 10px rgb(0, 0, 0, 0.3);
+    display: flex;
+    gap: 0.5em;
+    transition: 0.5s
+}
+
+.devices-light-livingroom h3,
+.devices-tv h3,
+.devices-cold-livingroom h3,
+.devices-game h3,
+.devices-speaker h3,
+.devices-cold-bedroom h3,
+.devices-lamp h3,
+.devices-printer h3,
+.devices-light-office h3,
+.devices-light-kitchen h3,
+.devices-fire1 h3,
+.devices-coffee h3,
+.devices-cooker h3,
+.devices-refrigerator h3,
+.devices-light-bathroom h3,
+.devices-washmachine h3 {
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--clr);
+}
+
+.devices-light-livingroom ion-icon,
+.devices-tv ion-icon,
+.devices-game ion-icon,
+.devices-speaker .icon,
+.devices-cold-livingroom ion-icon,
+.devices-printer .icon,
+.devices-lamp ion-icon,
+.devices-light-office ion-icon,
+.devices-cold-bedroom ion-icon,
+.devices-light-kitchen ion-icon,
+.devices-fire1 ion-icon,
+.devices-coffee ion-icon,
+.devices-cooker .icon,
+.devices-refrigerator .icon,
+.devices-light-bathroom ion-icon,
+.devices-washmachine .icon {
+    font-size: 1.5em;
+    color: var(--clr);
+}
+
+.devices-light-livingroom {
+    width: 8.2em;
+    height: 3em;
+    transform: translateX(3em) translateY(5em);
+}
+
+.devices-tv {
+    width: 5.4em;
+    height: 3em;
+    transform: translateX(12.1em) translateY(2em);
+}
+
+.devices-tv h3 {
+    transform: translateX(1.3em) translateY(1em);
+}
+
+.devices-tv ion-icon {
+    transform: translateX(0.8em) translateY(0.49em);
+}
+
+.devices-game {
+    width: 5.6em;
+    height: 3em;
+    transform: translateX(18.5em) translateY(-1em);
+}
+
+.devices-game h3,
+.devices-refrigerator h3,
+.devices-cold-livingroom h3,
+.devices-cooker h3,
+.devices-washmachine h3 {
+    transform: translateX(1em) translateY(1em);
+}
+
+.devices-game ion-icon {
+    transform: translateX(0.6em) translateY(0.49em);
+}
+
+.devices-speaker {
+    width: 7em;
+    height: 3em;
+    transform: translateX(3em);
+}
+
+.devices-speaker h3 {
+    transform: translateX(2.8em) translateY(1em);
+}
+
+.devices-speaker .icon {
+    transform: translateX(0.6em) translateY(0.49em);
+}
+
+.devices-cold-livingroom {
+    width: 8em;
+    height: 3em;
+    transform: translateX(11em) translateY(-3em);
+}
+
+.devices-light-office {
+    width: 8.7em;
+    height: 3em;
+    transform: translateX(3em) translateY(5em);
+}
+
+.devices-light-livingroom h3,
+.devices-light-office h3,
+.devices-lamp h3,
+.devices-cold-bedroom h3,
+.devices-light-kitchen h3,
+.devices-coffee h3,
+.devices-fire1 h3,
+.devices-light-bathroom h3 {
+    transform: translateX(0.5em) translateY(1em);
+}
+
+.devices-lamp {
+    width: 8.2em;
+    height: 3em;
+    transform: translateX(12.5em) translateY(2em);
+}
+
+.devices-cold-bedroom {
+    width: 10.2em;
+    height: 3em;
+    transform: translateX(3em) translateY(3em);
+}
+
+.devices-printer {
+    width: 6.5em;
+    height: 3em;
+    transform: translateX(14em);
+}
+
+.devices-printer h3 {
+    transform: translateX(3em) translateY(1em);
+}
+
+.devices-printer .icon {
+    transform: translateX(0.5em) translateY(0.69em);
+}
+
+.devices-light-kitchen {
+    width: 9em;
+    height: 3em;
+    transform: translateX(3em) translateY(5em);
+}
+
+.devices-coffee {
+    width: 10em;
+    height: 3em;
+    transform: translateX(13em) translateY(2em);
+}
+
+.devices-fire1 {
+    width: 10em;
+    height: 3em;
+    transform: translateX(3em) translateY(3em);
+}
+
+.devices-fire1 ion-icon,
+.devices-coffee ion-icon,
+.devices-light-kitchen ion-icon,
+.devices-cold-bedroom ion-icon,
+.devices-lamp ion-icon,
+.devices-light-office ion-icon,
+.devices-cold-livingroom ion-icon,
+.devices-light-livingroom ion-icon,
+.devices-light-bathroom ion-icon {
+    transform: translateX(0.5em) translateY(0.45em);
+}
+
+.devices-cooker {
+    width: 6.5em;
+    height: 3em;
+    transform: translateX(14em);
+}
+
+.devices-cooker .icon {
+    transform: translateX(0.6em) translateY(0.65em);
+}
+
+.devices-refrigerator {
+    width: 8.2em;
+    height: 3em;
+    transform: translateX(3em) translateY(1em);
+}
+
+.devices-refrigerator .icon {
+    transform: translateX(0.6em) translateY(0.5em);
+}
+
+.devices-light-bathroom {
+    width: 11.2em;
+    height: 3em;
+    transform: translateX(3em) translateY(5em);
+}
+
+.devices-washmachine {
+    width: 11.2em;
+    height: 3em;
+    transform: translateX(3em) translateY(5.8em);
+}
+
+.devices-washmachine .icon {
+    transform: translateX(0.6em) translateY(0.55em);
+}
+
+.toggle-color.active {
+    transition: 0.5s;
+    background-color: #251000b7;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+.toggle-color.active ion-icon {
+    color: #fff;
+    filter: drop-shadow(0 0 2px #ffa20090)
+}
+
+.toggle-color.active .icon {
+    color: #fff;
+    filter: drop-shadow(0 0 2px #ffa20090)
+}
+
+.toggle-color.active h3 {
+    color: #fff;
+    filter: drop-shadow(0 0 2px #ffa20090)
+}
+
+.info {
+    text-align: center;
+}
+
+.info h3 {
+    font-size: 1.5em;
+    text-transform: uppercase;
+    color: #251000ef;
+    font-weight: normal;
+    transform: translate(0, 20em);
+    transition: 0.5s;
+    filter: drop-shadow(0 0 5px #ffa20090);
+}
+
+.devices_searchbox {
+    position: absolute;
+    padding: 70px;
+}
+
+#devices_searchinput {
+    border-radius: 5px;
+    width: 200px;
+    height: 25px;
+}
+
+.pic {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.img {
+    width: 250px;
+    margin: 120px;
+    display: none;
+}
+
+.pic img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+
+/* Phát */
+
+.analytics-main {
+    display: block;
+}
+
+.content-header,
+.content-footer {
+    display: flex;
+    margin-left: 50px;
+    margin-bottom: 20px;
+}
+
+.analytics-one {
+    position: relative;
+    background-color: #ffffff3a;
+    flex: 0.3;
+    border-radius: 20px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.5s ease;
+    box-shadow: 0px 2px 20px rgb(0, 0, 0, 0.3);
+}
+
+.analytics-one:hover {
+    transform: scale(0.98);
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('meoo.gif');
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    border-radius: 20px;
+}
+
+.analytics-two {
+    position: relative;
+    flex: 0.6;
+    background-color: #ffffff3a;
+    height: 330px;
+    margin-left: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 2px 20px rgb(0, 0, 0, 0.3);
+    transition: transform 0.5s ease;
+}
+
+.analytics-two:hover {
+    transform: scale(0.98);
+}
+
+#myChart {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.analytics-three {
+    position: relative;
+    background-color: #ffffff3a;
+    flex: 0.3;
+    border-radius: 20px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.5s ease;
+    box-shadow: 0px 2px 20px rgb(0, 0, 0, 0.3);
+}
+
+.analytics-three:hover {
+    transform: scale(0.98);
+}
+
+#searchinput {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    width: 300px;
+    height: 30px;
+    margin-top: 50px;
+}
+
+#body_data {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 70%;
+    height: 45%;
+}
+
+#body_data img {
+    width: 100px;
+    height: auto;
+}
+
+#city_and_temp {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#city_and_temp h2 {
+    font-size: 3em;
+    color: white;
+    margin-left: 10px;
+    min-width: 100px;
+}
+
+#city_and_temp h3 {
+    font-size: 1.2em;
+    color: rgb(255, 203, 15);
+    margin-left: 10px;
+    min-width: 100px;
+}
+
+#deatil {
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
+    margin-top: -5px;
+    box-sizing: border-box;
+}
+
+.col {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.col i {
+    font-size: 2.5em;
+    color: rgb(92, 198, 251);
+}
+
+.col h5 {
+    font-size: 1em;
+    color: rgb(255, 203, 15);
+}
+
+.col p {
+    text-transform: uppercase;
+    font-size: 0.8em;
+    color: rgb(255, 255, 255);
+}
+
+.analytics-four {
+    position: relative;
+    flex: 0.6;
+    background-color: #ffffff3a;
+    height: 330px;
+    margin-left: 20px;
+    border-radius: 20px;
+    transition: transform 0.5s ease;
+    box-shadow: 0px 2px 20px rgb(0, 0, 0, 0.3);
+}
+
+.analytics-four:hover {
+    transform: scale(0.98);
+}
+
+#lineChart {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.profile {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile .gif {
+    width: 40%;
+    height: auto;
+    transform: translate(40em, -1em);
+}
+
+.profile-content {
+    position: relative;
+    transform: translate(2em, -33em);
+    height: auto;
+    margin-left: 140px;
+    margin-top: 40px;
+    color: rgb(255, 255, 255);
+}
+
+.profile-content h2 {
+    font-size: 5em;
+}
+
+.about-us p {
+    font-size: 0.8em;
+    margin-right: 755px;
+    text-align: justify;
+}
+
+.contact {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+
+.profile-info p {
+    font-size: 0.9em;
+    margin-top: 5px;
+    gap: 15px;
+}
+
+.profile-info .social-links {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.profile-info .social-links a {
+    color: #fff;
+    font-size: 0.8em;
+    transform: translateY(2px);
+}

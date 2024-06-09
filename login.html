@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IoT Smarthome</title>
+    <link rel="stylesheet" type="text/css" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+</head>
+
+<body>
+    <div class="menuToggle"></div>
+    <div class="smarthome">
+        <div class="sidebar">
+            <ul>
+                <li class="logo" style="--bg:#333;">
+                    <a href="#">
+                        <div class="icon">
+                            <img class="anh" src="logo.png" alt="">
+                        </div>
+                        <div class="text">7 NĂM RA TRƯỜNG</div>
+                    </a>
+                </li>
+                <div class="Menulist">
+                    <li style="--bg: #ffffff2c;" class="active">
+                        <a href="#">
+                            <div class="icon">
+                                <ion-icon name="home-outline"></ion-icon>
+                            </div>
+                            <div class="text">Home</div>
+                        </a>
+                    </li>
+                    <li style="--bg: #ffffff2c;">
+                        <a href="#">
+                            <div class="icon">
+                                <ion-icon name="bulb-outline"></ion-icon>
+                            </div>
+                            <div class="text">Light</div>
+                        </a>
+                    </li>
+                    <li style="--bg: #ffffff2c;">
+                        <a href="#">
+                            <div class="icon">
+                                <ion-icon name="tv-outline"></ion-icon>
+                            </div>
+                            <div class="text">Devices</div>
+                        </a>
+                    </li>
+                    <li style="--bg: #ffffff2c;">
+                        <a href="#">
+                            <div class="icon">
+                                <ion-icon name="bar-chart-outline"></ion-icon>
+                            </div>
+                            <div class="text">Analytics</div>
+                        </a>
+                    </li>
+                    <li style="--bg: #ffffff2c;">
+                        <a href="#">
+                            <div class="icon">
+                                <ion-icon name="person-outline"></ion-icon>
+                            </div>
+                            <div class="text">About Us</div>
+                        </a>
+                    </li>
+                </div>
+                <div class="bottom">
+                    <li style="--bg:#333;">
+                        <a href="#" id="logout-btn">
+                            <div class="icon">
+                                <ion-icon name="log-out-outline"></ion-icon>
+                            </div>
+                            <div class="text">Log out</div>
+                        </a>
+                    </li>
+                </div>
+            </ul>
+        </div>
+        <div class="work">
+            <div class="home">
+                <div class="datetime">
+                    <div class="time">
+                        <span id="hour">00:</span>
+                        <span id="minutes">00:</span>
+                        <span id="seconds">00</span>
+                        <span id="period">AM</span>
+                    </div>
+                    <div class="date">
+                        <span id="dayname">Day,</span>
+                        <span id="month">Month,</span>
+                        <span id="daynum">00,</span>
+                        <span id="year">Year</span>
+                    </div>
+                </div>
+                <div class="house">
+                    <h2>Smarthome <br> Full View</h2>
+                    <div class="livingroom">
+                        <h4>Living Room</h4>
+                        <span class="icon snow-livingroom" data-device="snow-livingroom"><ion-icon name="snow-outline"></ion-icon></span>
+                        <span class="icon light-livingroom" data-device="light-livingroom"><ion-icon name="bulb-outline"></ion-icon></span>
+                        <div class="sofa">
+                            <div class="sofa-inside"></div>
+                            <div class="sofa-beside"></div>
+                        </div>
+                        <div class="tv-table">
+                            <div class="icon-tv-table">
+                                <span data-device="game-livingroom"><ion-icon name="game-controller-outline"></ion-icon></span>
+                                <span data-device="tv-livingroom"><ion-icon name="tv-outline"></ion-icon></span>
+                                <span data-device="speaker-livingroom"><ion-icon name="volume-high-outline"></ion-icon></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bedroom">
+                        <h4>Bedroom</h4>
+                        <span class="icon lamp-bedroom" data-device="lamp-bedroom"><ion-icon name="bulb-outline"></ion-icon></span>
+                        <span class="icon snow-bedroom" data-device="snow-bedroom"><ion-icon name="snow-outline"></ion-icon></span>
+                        <div class="bed"></div>
+                        <div class="office">
+                            <span class="icon light-bedroom" data-device="light-bedroom"><ion-icon name="bulb-outline"></ion-icon></span>
+                            <span class="icon printer-bedroom" data-device="printer-bedroom"><ion-icon name="print-outline"></ion-icon></span>
+                        </div>
+                    </div>
+                    <div class="kitchen">
+                        <h4>Kitchen</h4>
+                        <div class="dinning-table">
+                            <span class="icon-light-kitchen" data-device="light-kitchen"><ion-icon name="bulb-outline"></ion-icon></span>
+                        </div>
+                        <div class="kitchen-table">
+                            <div class="icon-kitchen-table">
+                                <span class="icon" data-device="cooker-kitchen"><i class="gg-smart-home-cooker"></i></span>
+                                <span data-device="flame-kitchen"><ion-icon name="flame-outline"></ion-icon></span>
+                                <span data-device="cafe-kitchen"><ion-icon name="cafe-outline"></ion-icon></span>
+                                <span class="icon" data-device="tulanh-kitchen"><i class="gg-smart-home-refrigerator"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bathroom">
+                        <h4>Bathroom</h4>
+                        <div class="icon-bathroom">
+                            <span class="icon-light-bathroom" data-device="light-bathroom"><ion-icon name="bulb-outline"></ion-icon></span>
+                            <span class="icon" data-device="wash-bathroom"><i class="gg-smart-home-wash-machine"></i></span>
+                        </div>
+                    </div>
+                    <div class="room-line-left"></div>
+                    <div class="room-line-top"></div>
+                    <div class="room-line-bottom"></div>
+                    <div class="room-line-right"></div>
+                </div>
+            </div>
+            <div class="light">
+                <div class="lightMenu">
+                    <div class="rooms">
+                        <h2>Living <br> Room</h2>
+                        <div id="brightnessDisplay">0%</div>
+                        <div class="lamp-wrapper">
+                            <div class="lamp">
+                                <img src="mainlight.png" alt="" class="rooms-img">
+                                <div class="blub"></div>
+                            </div>
+                            <div class="wall-light-shadow"></div>
+                        </div>
+                        <form id="livingroom-form" oninput="body.setAttribute('livingroom-light', slide.value)">
+                            <input type="range" id="slide" value="0" min="0" max="100">
+                        </form>
+                    </div>
+                    <div class="rooms">
+                        <h2>BedRoom</h2>
+                        <div class="office">
+                            <h3>THE OFFICE</h3>
+                            <img src="office_fix.png" alt="" class="office-img">
+                            <div class="check-office">
+                                <label for="check-office">
+                                    <input type="checkbox" id="check-office">
+                                    <span><ion-icon name="bulb-outline"></ion-icon></span>
+                                    <div class="bulb-office"></div>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="bed">
+                            <h3>THE BED</h3>
+                            <img src="lamp.png" alt="" class="bed-img">
+                            <div class="check-bed">
+                                <label for="check-bed">
+                                    <input type="checkbox" id="check-bed">
+                                    <span><ion-icon name="bulb-outline"></ion-icon></span>
+                                    <div class="bulb-bed"></div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rooms">
+                        <h2>Kitchen</h2>
+                        <div class="dining-table">
+                            <h3>THE DINING TABLE</h3>
+                            <div id="brightnessDisplay-kitchen">0%</div>
+                            <div class="lamp-wrapper">
+                                <div class="lamp">
+                                    <img src="denbep.png" alt="" class="dining-table-img">
+                                    <div class="blub-kitchen"></div>
+                                </div>
+                                <div class="wall-light-shadow-kitchen"></div>
+                            </div>
+                            <form id="dining-table-light" oninput="body.setAttribute('kitchen-light', slide.value)">
+                                <input type="range" id="slide-kitchen" value="0" min="0" max="100">
+                            </form>
+                        </div>
+                        <div class="bep">
+                            <h3>BATHROOM</h3>
+                            <img src="dining-lamp.png" alt="" class="bep-img">
+                            <div class="check-bep">
+                                <label for="check-bep">
+                                    <input type="checkbox" id="check-bep">
+                                    <span><ion-icon name="bulb-outline"></ion-icon></span>
+                                    <div class="bulb-bep"></div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="devices">
+                <div class="livingroom">
+                    <h2>Living Room</h2>
+                    <div class="devices-light-livingroom toggle-color" data-device="light-livingroom">
+                        <span><ion-icon name="bulb-outline"></ion-icon></span>
+                        <h3>Main Light</h3>
+                    </div>
+                    <div class="devices-tv toggle-color" data-device="tv-livingroom">
+                        <span><ion-icon name="tv-outline"></ion-icon></span>
+                        <h3>TV</h3>
+                    </div>
+                    <div class="devices-game toggle-color" data-device="game-livingroom">
+                        <span><ion-icon name="game-controller-outline"></ion-icon></span>
+                        <h3>PS5</h3>
+                    </div>
+                    <div class="devices-speaker toggle-color" data-device="speaker-livingroom">
+                        <span class="icon"><i class="gg-music-speaker"></i></span>
+                        <h3>Speaker</h3>
+                    </div>
+                    <div class="devices-cold-livingroom toggle-color" data-device="snow-livingroom">
+                        <span><ion-icon name="snow-outline"></ion-icon></span>
+                        <h3>Air-cooler</h3>
+                    </div>
+                </div>
+                <div class="bedroom">
+                    <h2>BedRoom</h2>
+                    <div class="devices-light-office toggle-color" data-device="light-bedroom">
+                        <span><ion-icon name="bulb-outline"></ion-icon></span>
+                        <h3>Office Lamp</h3>
+                    </div>
+                    <div class="devices-lamp toggle-color" data-device="lamp-bedroom">
+                        <span><ion-icon name="bulb-outline"></ion-icon></span>
+                        <h3>Desk Lamp</h3>
+                    </div>
+                    <div class="devices-cold-bedroom toggle-color" data-device="snow-bedroom">
+                        <span><ion-icon name="snow-outline"></ion-icon></span>
+                        <h3>Air-conditioner</h3>
+                    </div>
+                    <div class="devices-printer toggle-color" data-device="printer-bedroom">
+                        <span class="icon"><i class="gg-printer"></i></span>
+                        <h3>Printer</h3>
+                    </div>
+                </div>
+                <div class="kitchen">
+                    <h2>Kitchen</h2>
+                    <div class="devices-light-kitchen toggle-color" data-device="light-kitchen">
+                        <span><ion-icon name="bulb-outline"></ion-icon></span>
+                        <h3>Dining Lamp</h3>
+                    </div>
+                    <div class="devices-coffee toggle-color" data-device="cafe-kitchen">
+                        <span><ion-icon name="cafe-outline"></ion-icon></span>
+                        <h3>Coffee Machine</h3>
+                    </div>
+                    <div class="devices-fire1 toggle-color" data-device="flame-kitchen">
+                        <span><ion-icon name="flame-outline"></ion-icon></span>
+                        <h3>Electric Stove</h3>
+                    </div>
+                    <div class="devices-cooker toggle-color" data-device="cooker-kitchen">
+                        <span class="icon"><i class="gg-smart-home-cooker"></i></span>
+                        <h3>Cooker</h3>
+                    </div>
+                    <div class="devices-refrigerator toggle-color" data-device="tulanh-kitchen">
+                        <span class="icon"><i class="gg-smart-home-refrigerator"></i></span>
+                        <h3>Refrigerator</h3>
+                    </div>
+                </div>
+                <div class="bathroom">
+                    <h2>Bathroom</h2>
+                    <div class="devices-light-bathroom toggle-color" data-device="light-bathroom">
+                        <span><ion-icon name="bulb-outline"></ion-icon></span>
+                        <h3>Bathroom Lamp</h3>
+                    </div>
+                    <div class="devices-washmachine toggle-color" data-device="wash-bathroom">
+                        <span class="icon"><i class="gg-smart-home-wash-machine"></i></span>
+                        <h3>Washing Machine</h3>
+                    </div>
+                </div>
+                <div class="info">
+                    <h2>Information</h2>
+                    <div class="devices_searchbox">
+                        <input type="text" placeholder=" Enter device name" id="devices_searchinput">
+                    </div>
+                    <div class="pic">
+                        <h3>Status</h3>
+                        <img class="img" src="ps5.png" alt="PS5">
+                        <img class="img" src="maygiat.png" alt="Washing Machine">
+                        <img class="img" src="coffeemachine.png" alt="Coffee Machine">
+                        <img class="img" src="bep.png" alt="Electric Stove">
+                        <img class="img" src="tulanh.png" alt="Refrigerator">
+                        <img class="img" src="cooker.png" alt="Cooker">
+                        <img class="img" src="dining-lamp.png" alt="Bathroom Lamp">
+                        <img class="img" src="mainlight.png" alt="Main Light">
+                        <img class="img" src="lamp.png" alt="Desk Lamp">
+                        <img class="img" src="loa.png" alt="Speaker">
+                        <img class="img" src="office_fix.png" alt="Office Lamp">
+                        <img class="img" src="printer.png" alt="Printer">
+                        <img class="img" src="denbep.png" alt="Dining Lamp">
+                        <img class="img" src="tv.png" alt="TV">
+                        <img class="img" src="maylanh.png" alt="Air-Conditioner">
+                        <img class="img" src="airconditioner.png" alt="Air-Cooler">
+                    </div>
+                </div>
+            </div>
+            <div class="analytics">
+                <div class="analytics-main ">
+                    <div class="content-header">
+                        <div class="analytics-one">
+                            <div class="background-image"></div>
+                        </div>
+                        <div class="analytics-two">
+                            <div>
+                                <canvas id="myChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-footer">
+                        <div class="analytics-three">
+                            <div class="searchbox">
+                                <input type="text" placeholder=" Enter city name" id="searchinput">
+                            </div>
+                            <div class="body" id="body_data">
+                                <img src="clouds.png" alt="" id="body_img">
+                                <div id="city_and_temp">
+                                    <h2 id="temp">None
+                                    </h2>
+                                    <h3 id="city">None</h3>
+                                </div>
+                            </div>
+                            <div class="deatil" id="deatil">
+                                <div class="col">
+                                    <i class="fa-solid fa-droplet"></i>
+                                    <div>
+                                        <h5 id="humidity">50%</h5>
+                                        <p>humidity</p>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <i class="fa-solid fa-wind"></i>
+                                    <div>
+                                        <h5 id="windspeed">15 km/h</h5>
+                                        <p>wind speed</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="analytics-four">
+                            <div>
+                                <canvas id="lineChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="profile">
+                <img class="gif" src="gip.gif" alt="">
+                <div class="profile-content">
+                    <h2>ABOUT US</h2>
+                    <div class="about-us">
+                        <p>"7 năm ra trường" is a group of students at HCMC University of Technical Education. The group was established to carry out a project for the IoT subject. We are passionate about technology and always want to create new and useful
+                            things. With slogan "Better home - better live", we hope to bring you wonderful experiences.</p>
+                    </div>
+                    <div class="contact">
+                        <h3>Information</h3>
+                        <div class="profile-info">
+                            <p>Pham Hong Yen<br>ID: 21119164<br>Student at HCMC University of Technology and Education</p>
+                            <div class="social-links">
+                                <p>Contact at</p>
+                                <a href="https://www.facebook.com/profile.php?id=100005000568167" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                <a href="mailto:21119164@student.hcmute.edu.vn" target="_blank"><i class="fab fa-google"></i></a>
+                            </div>
+                        </div>
+                        <div class="profile-info">
+                            <p>Vo Tan Phat<br>ID: 21119115<br>Student at HCMC University of Technology and Education</p>
+                            <div class="social-links">
+                                <p>Contact at</p>
+                                <a href="https://www.facebook.com/tanphatute" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                <a href="mailto:21119115@student.hcmute.edu.vn" target="_blank"><i class="fab fa-google"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="login.js" defer type="module"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+    <script src="test.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Iot Web</title>
+</head>
+
+<body>
+    <div class="container" id="container">
+        <div class="form-container sign-up">
+            <form>
+                <h1>Registration</h1>
+                <input type="user" name="" id="user" placeholder="Username">
+                <input type="email" name="" id="email" placeholder="Email">
+                <input type="password" name="" id="password" placeholder="Password">
+                <button id="signUp-btn">Sign Up</button>
+            </form>
+        </div>
+        <div class="form-container sign-in" id="sign-in-form">
+            <form>
+                <h1>Sign In</h1>
+                <input type="user" name="" id="tk" placeholder="Email">
+                <input type="password" name="" id="pass" placeholder="Password">
+                <a href="#" id="forgot-password">Forgot password?</a>
+                <button id="signIn-btn">Let's Go</button>
+            </form>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>The Smarthome</h1>
+                    <p>Enter your personal information to use all site features.</p>
+                    <button class="hidden" id="login">Sign In</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>The Smarthome</h1>
+                    <p>Helps you manage and control electronic devices in your home.</p>
+                    <button class="hidden" id="register">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js" type="module"></script>
+</body>
+
+</html>
